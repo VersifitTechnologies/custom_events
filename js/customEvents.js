@@ -306,7 +306,7 @@
 									var chart = eventObject.chart,
 										normalizedEvent = chart.pointer.normalize(e);
 
-									elemObj = eventObject.searchPoint(normalizedEvent, eventObject.kdDimensions === 1) || elemObj; // #87 - wrong searchPoint for scatter series
+									elemObj = e.target.point || eventObject.searchPoint(normalizedEvent, eventObject.kdDimensions === 1) || elemObj; // #87 - wrong searchPoint for scatter series 
 									e.point = elemObj;	//	#89 point reference in mouse event
 
 								}
